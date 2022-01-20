@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+NAME : <p style="display:inline" id="Name"></p><br>
+Symbol : <p style="display:inline" id="Symbol"></p><br>
+Contract : <p style="display:inline" id="Contract"></p><br>
+Price : $<p style="display:inline" id="CP"></p><br>
+24h High : $<p style="display:inline" id="H24"></p><br>
+24h Low : $<p style="display:inline" id="L24"></p>
+
+<script>
+
+const userAction = async () => {
+  const response = await fetch('https://api.coingecko.com/api/v3/coins/alkimi', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  const myJson = await response.json();
+  console.log(myJson);
+  return myJson
+}
+
+const resultCG = userAction().then(myJson => myJson);
+
+var valueCG = Promise.resolve(resultCG)
+       valueCG.then(myJson => {
+       array = myJson
+         document.getElementById("Name").innerHTML =  JSON.stringify(array.name);
+         document.getElementById("Symbol").innerHTML =  JSON.stringify(array.symbol);
+         document.getElementById("Contract").innerHTML =  JSON.stringify(array.contract_address);
+         document.getElementById("CP").innerHTML =  JSON.stringify(array.market_data.current_price.usd);
+         document.getElementById("H24").innerHTML =  JSON.stringify(array.market_data.high_24h.usd);
+         document.getElementById("L24").innerHTML =  JSON.stringify(array.market_data.low_24h.usd);
+       });
+
+</script>
+
+</body>
+</html>
