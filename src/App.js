@@ -19,11 +19,11 @@ function App() {
       <div className="block"><span>ID: </span><p>{data?.id}</p></div>
       <div className="block"><span>Name: </span><p>{data?.name}</p></div>
       <div className="block"><span>Asset platform ID: </span><p>{data?.asset_platform_id}</p></div>
-      <div className="block"><span>Website </span><p>{data?.links.homepage}</p></div>
-      <div className="block"><span>announcement URL </span><p>{data?.links.announcement_url}</p></div>
+      <div className="block"><span>Website </span><p className="overflow">{data?.links.homepage}</p></div>
+      <div className="block"><span>announcement URL </span><p className="overflow">{data?.links.announcement_url}</p></div>
       <div className="block"><span>Twitter: </span><p>{data?.links.twitter_screen_name}</p></div>
       <div className="block"><span>Telegram: </span><p>{data?.links.telegram_channel_identifier}</p></div>
-      <div className="block"><span>Contract Address: </span><p>{data?.contract_address}</p></div>
+      <div className="block"><span>Contract Address: </span><p className="overflow">{data?.contract_address}</p></div>
       <div className="block"><span>Current Price GBP: </span><p>{data?.market_data.current_price.gbp}</p></div>
       <div className="block"><span>Total Volume: </span><p>{data?.market_data.total_volume.gbp}</p></div>
       <div className="block"><span>Total Volume: </span><p>{data?.market_data.total_volume.gbp}</p></div>
