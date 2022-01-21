@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import useFetch from './useFetch';
-
+import Logo from './assets/img/logo.png'
 
 function App() {
 
@@ -14,6 +14,9 @@ function App() {
 
   return (
     <div className="App">
+      <div className="logo">
+      <img src={Logo}></img>
+      </div>
       <h1>$ADS Token Information</h1>
       <div className="section">
       <div className="block"><span>ID: </span><p>{data?.id}</p></div>
